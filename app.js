@@ -33,7 +33,7 @@ bot.dialog('/', [function (session) {
 },
   function(session, results){
     if(results.response){
-      session.send("I love " + results.response + " too!");
+      session.send("I love " + results.response.entity + " too!");
     }
   }
 
