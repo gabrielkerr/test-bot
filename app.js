@@ -47,19 +47,11 @@ bot.dialog('/', [
       builder.Prompts.time(session, "What time would you like your robot army to arrive?");
     },
     function(session, results){
-      session.send("Your army shall arrive promptly at " + results.response +  "!");
-      builder.Prompts.confirm(session, "Thank you for your request! Will you require another army in the future?");
+      session.send("Your army shall arrive promptly at " + results.response.entity +  "!");
+      builder.Prompts.confirm(session, "Thank you for your request! Will you require another army in the future?", "Heck yes!|I don't think so.");
     },
     function(session, results){
       session.send(results.response);
-      if(results.response == 'confirm_yes')
-      {
-        session.send("Great! I'm looking forward to seeing you again!");
-      }
-      else(results.response == 'confirm_no')
-      {
-        session.send("No? Well I hope you had a good experience!");
-      }
     }
 ]);
 
