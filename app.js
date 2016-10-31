@@ -48,10 +48,21 @@ bot.dialog('/', [
     },
     function(session, results){
       session.send("Your army shall arrive promptly at " + results.response.entity +  "!");
-      builder.Prompts.confirm(session, "Thank you for your request! Will you require another army in the future?", "Heck yes!|I don't think so.");
+      builder.Prompts.confirm(session, "Thank you for your request! Will you require another army in the future?");
     },
     function(session, results){
-      session.send(results.response);
+      if(results.response)
+      {
+        session.send("Great! I'm looking forward to seeing you again!");
+      }
+      else if(!results.response)
+      {
+        session.send("No? Well I hope you had a good experience!")
+      }
+      else
+      {
+        session.send("Umm...");
+      }
     }
 ]);
 
