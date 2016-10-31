@@ -28,13 +28,19 @@ server.post('/api/messages', connector.listen());
 // Bots Dialogs
 //=========================================================
 
+bot.DialogAction.send("Hi there!");
+
 bot.dialog('/', [function (session) {
-  builder.Prompts.choice(session, "Which color?", "red|green|blue")
+  session.send("You're amazing.");
+]);
+
+
+/*  builder.Prompts.choice(session, "Which color?", "red|green|blue")
 },
   function(session, results){
     if(results.response){
       session.send("I love " + results.response.entity + " too!");
     }
-  }
+  }*/
 
-]);
+
