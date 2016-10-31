@@ -40,7 +40,7 @@ bot.dialog('/', [
     },
     function(session, results){
       session.send("And " + results.response + " robots you shall receive!");
-      builder.Prompts.choice(session, "Your robot army can do one of three things. Pick which programming will best fit your purposes.", "Build|Destroy|Save the World|Hand out Ice Cream");
+      builder.Prompts.choice(session, "Your robot army can do one of four things. Pick which programming will best fit your purposes.", "Build|Destroy|Save the World|Hand out Ice Cream");
     },
     function(session, results){
       session.send("A wise choice! Your robot army will be built to " + results.response.entity + ".");
