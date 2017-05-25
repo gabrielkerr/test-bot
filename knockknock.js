@@ -39,8 +39,7 @@ bot.dialog('/', [
         },
         function(session, results, args){
             var resp = results.response;
-//            console.log(args.intent);
-            if(resp != "who's there?") {
+            if(resp != "who's there?" || resp != "Who's there?" || resp != "who's there" || resp != "Who's there") {
                 session.send("Aw man, you didn't say who's there! Joke's ruined. Bye!");
                 session.endDialog();
             }
@@ -52,7 +51,7 @@ bot.dialog('/', [
             var resp = results.response;
 
             if(resp != "Broken pencil who?") {
-                session.send("You're not playing! Sad day. Cath ya later :P");
+                session.send("You're not playing! Sad day. Catch ya later :P");
                 session.endDialog();
             }
             else {
