@@ -24,8 +24,8 @@ var bot = new builder.UniversalBot(connector, {
 });
 server.post('/api/messages', connector.listen());
 
-var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/07f2c1c4-3213-4f81-9fea-e4711eb10e6c?subscription-key=fc7108cd0d074d50965355f8ca535143&verbose=true&timezoneOffset=-420&q=');
-bot.recognizer(recognizer);
+//var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/07f2c1c4-3213-4f81-9fea-e4711eb10e6c?subscription-key=fc7108cd0d074d50965355f8ca535143&verbose=true&timezoneOffset=-420&q=');
+//bot.recognizer(recognizer);
 
 //=========================================================
 // Bots Dialogs
@@ -39,7 +39,7 @@ bot.dialog('/', [
         },
         function(session, results, args){
             var resp = results.response;
-            if(resp != "who's there?" || resp != "Who's there?" || resp != "who's there" || resp != "Who's there") {
+            if(resp != "who's there?" && resp != "Who's there?" && resp != "who's there" && resp != "Who's there") {
                 session.send("Aw man, you didn't say who's there! Joke's ruined. Bye!");
                 session.endDialog();
             }
